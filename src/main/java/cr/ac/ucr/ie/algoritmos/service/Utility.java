@@ -68,4 +68,21 @@ public class Utility {
         }
         return buscarHijo(nodo.getNodoIzq());
     }
+
+    public void imprimirEstructura() {
+        imprimirEstructuraRecursivo(raiz, "");
+    }
+
+    private void imprimirEstructuraRecursivo(Nodo nodo, String prefijo) {
+        if (nodo != null) {
+            System.out.println(prefijo + "├── Key: " + nodo.getKey());
+            String nuevoPrefijo = prefijo + "│   ";
+            imprimirEstructuraRecursivo(nodo.getNodoIzq(), nuevoPrefijo + "├── ");
+            imprimirEstructuraRecursivo(nodo.getNodoDer(), nuevoPrefijo + "└── ");
+        }
+    }
+
+    public Nodo getRaiz() {
+        return raiz;
+    }
 }
