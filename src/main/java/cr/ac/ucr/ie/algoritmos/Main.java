@@ -1,8 +1,15 @@
 package cr.ac.ucr.ie.algoritmos;
 
+import cr.ac.ucr.ie.algoritmos.model.Nodo;
+import cr.ac.ucr.ie.algoritmos.service.Recorridos;
+import cr.ac.ucr.ie.algoritmos.service.Utility;
+
 import java.util.Scanner;
 
 public class Main {
+    static Utility utility = new Utility();
+    static Nodo nodoRaiz = utility.getRaiz();
+  static Recorridos recorridos = new Recorridos();
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in); //Se crear el Scanner para leer las entradas en consola
         int opcion = 0; //Se inicializa la variable opcion en 0, de esa forma entra en el While
@@ -26,12 +33,13 @@ public class Main {
 
                         break;
                     case 3:
-
+                        recorridos.recorridoPREORDEN(nodoRaiz);
                         break;
                     case 4:
-
+                        recorridos.recorridoENORDEN(nodoRaiz);
                         break;
                     case 5:
+                        recorridos.recorridoPOSTORDEN(nodoRaiz);
                         break;
                     case 6:
                         System.exit(0); //Se termina la ejecución del programa.
