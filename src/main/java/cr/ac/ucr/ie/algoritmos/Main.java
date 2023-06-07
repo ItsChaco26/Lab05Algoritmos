@@ -20,16 +20,12 @@ public class Main {
                 opcion = sn.nextInt(); //Se asigna un dato tipo int a la variable opción para proceder a eveluarla en el switch y ejecutar un método o acciones especificas
                 switch (opcion) {
                     case 1:
-
                         break;
                     case 2:
-
                         break;
                     case 3:
-
                         break;
                     case 4:
-
                         break;
                     case 5:
                         break;
