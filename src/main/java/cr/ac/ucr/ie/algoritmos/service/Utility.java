@@ -4,4 +4,9 @@ public class Utility {
     public void insertarNodo(){
 
     }
+
+    public void eliminarNodo(){
+
+    }
+
 }
