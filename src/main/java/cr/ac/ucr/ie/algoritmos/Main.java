@@ -1,12 +1,17 @@
 package cr.ac.ucr.ie.algoritmos;
 
+import cr.ac.ucr.ie.algoritmos.model.Nodo;
+import cr.ac.ucr.ie.algoritmos.service.Recorridos;
 import cr.ac.ucr.ie.algoritmos.service.Utility;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Utility uT = new Utility();
+        Utility utility = new Utility();
+        int nivel = 1;
+        Recorridos recorridos = new Recorridos();
+
         Scanner sn = new Scanner(System.in); //Se crear el Scanner para leer las entradas en consola
         int opcion = 0; //Se inicializa la variable opcion en 0, de esa forma entra en el While
         while (opcion != 6) { //While que permitirá ejecutar el menú hasta que el usuario ingrese 11 la opción salir.
@@ -31,21 +36,25 @@ public class Main {
                         String apellidos = sn.next();
                         System.out.println("Digite la carrera:");
                         String carrera = sn.next();
-                        uT.insertarNodo(key, nombre, apellidos, carrera);
+                        utility.insertarNodo(key, nombre, apellidos, carrera);
                         break;
                     case 2:
                         System.out.println("Digite el número de nodo a eliminar:");
                         int keyEliminar = sn.nextInt();
-                        uT.eliminarNodo(keyEliminar);
+                        utility.eliminarNodo(keyEliminar);
                         break;
                     case 3:
+                        recorridos.recorridoPREORDEN(utility.getRaiz(), nivel);
                         break;
                     case 4:
+                        recorridos.recorridoENORDEN(utility.getRaiz(), nivel);
                         break;
                     case 5:
+                        recorridos.recorridoPOSTORDEN(utility.getRaiz(), nivel);
                         break;
                     case 6:
                         System.exit(0); //Se termina la ejecución del programa.
+                        break;
                     default:
                         System.out.println("Se digitó un número incorrecto");
                         break;
