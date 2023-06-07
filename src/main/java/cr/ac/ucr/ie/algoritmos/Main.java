@@ -46,10 +46,6 @@ public class Main {
                         break;
                     case 6:
                         System.exit(0); //Se termina la ejecución del programa.
-                        break;
-                    case 7:
-                        uT.imprimirNodos();
-                        break;
                     default:
                         System.out.println("Se digitó un número incorrecto");
                         break;
