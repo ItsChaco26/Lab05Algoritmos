@@ -1,9 +1,12 @@
 package cr.ac.ucr.ie.algoritmos;
 
+import cr.ac.ucr.ie.algoritmos.service.Utility;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Utility uT = new Utility();
         Scanner sn = new Scanner(System.in); //Se crear el Scanner para leer las entradas en consola
         int opcion = 0; //Se inicializa la variable opcion en 0, de esa forma entra en el While
         while (opcion != 6) { //While que permitirá ejecutar el menú hasta que el usuario ingrese 11 la opción salir.
@@ -20,21 +23,32 @@ public class Main {
                 opcion = sn.nextInt(); //Se asigna un dato tipo int a la variable opción para proceder a eveluarla en el switch y ejecutar un método o acciones especificas
                 switch (opcion) {
                     case 1:
-
+                        System.out.println("Digite el número de nodo a insertar:");
+                        int key = sn.nextInt();
+                        System.out.println("Digite el nombre:");
+                        String nombre = sn.next();
+                        System.out.println("Digite los apellidos:");
+                        String apellidos = sn.next();
+                        System.out.println("Digite la carrera:");
+                        String carrera = sn.next();
+                        uT.insertarNodo(key, nombre, apellidos, carrera);
                         break;
                     case 2:
-
+                        System.out.println("Digite el número de nodo a eliminar:");
+                        int keyEliminar = sn.nextInt();
+                        uT.eliminarNodo(keyEliminar);
                         break;
                     case 3:
-
                         break;
                     case 4:
-
                         break;
                     case 5:
                         break;
                     case 6:
                         System.exit(0); //Se termina la ejecución del programa.
+                        break;
+                    case 7:
+                        uT.imprimirNodos();
                         break;
                     default:
                         System.out.println("Se digitó un número incorrecto");
