@@ -4,38 +4,51 @@ import cr.ac.ucr.ie.algoritmos.model.Nodo;
 
 public class Recorridos {
 
-
-    public void recorridoENORDEN(Nodo nodoRaiz) {
+    public void recorridoPREORDEN(Nodo nodoRaiz, int nivel) {
         if (nodoRaiz == null) {
             System.out.println("El árbol no contiene elementos.");
         } else {
-            recorridoENORDEN(nodoRaiz.getNodoIzq());
+
+            for (int i = 0; i < nivel; i++) {
+                System.out.print("  ");
+            }
+
             System.out.println(nodoRaiz.getKey());
-            recorridoENORDEN(nodoRaiz.getNodoDer());
+
+            recorridoPREORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
+            recorridoPREORDEN(nodoRaiz.getNodoDer(), nivel + 1);
         }
     }
 
-    public void recorridoPREORDEN(Nodo nodoRaiz){
-        if(nodoRaiz==null)
-            System.out.println("El árbol no contiene elementos.");
-        else{
-
-            System.out.println(nodoRaiz.getKey());
-            recorridoPREORDEN(nodoRaiz.getNodoIzq());
-            recorridoPREORDEN(nodoRaiz.getNodoDer());
-
-        }
-
-    }
-
-    public void recorridoPOSTORDEN(Nodo nodoRaiz) {
+    public void recorridoENORDEN(Nodo nodoRaiz, int nivel) {
         if (nodoRaiz == null) {
             System.out.println("El árbol no contiene elementos.");
         } else {
-            recorridoPOSTORDEN(nodoRaiz.getNodoIzq());
-            recorridoPOSTORDEN(nodoRaiz.getNodoDer());
+            recorridoENORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
+
+
+            for (int i = 0; i < nivel; i++) {
+                System.out.print("  ");
+            }
+
+            System.out.println(nodoRaiz.getKey());
+
+            recorridoENORDEN(nodoRaiz.getNodoDer(), nivel + 1);
+    }}
+
+    public void recorridoPOSTORDEN(Nodo nodoRaiz, int nivel) {
+        if (nodoRaiz == null) {
+            System.out.println("El árbol no contiene elementos.");
+        } else {
+            recorridoPOSTORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
+            recorridoPOSTORDEN(nodoRaiz.getNodoDer(), nivel + 1);
+
+
+            for (int i = 0; i < nivel; i++) {
+                System.out.print("  ");
+            }
+
             System.out.println(nodoRaiz.getKey());
         }
     }
-
 }

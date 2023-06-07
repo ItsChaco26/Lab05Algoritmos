@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class Main {
     static Utility utility = new Utility();
     static Nodo nodoRaiz = utility.getRaiz();
+
+    static int nivel = 1;
   static Recorridos recorridos = new Recorridos();
     public static void main(String[] args) {
         Scanner sn = new Scanner(System.in); //Se crear el Scanner para leer las entradas en consola
@@ -33,13 +35,13 @@ public class Main {
 
                         break;
                     case 3:
-                        recorridos.recorridoPREORDEN(nodoRaiz);
+                        recorridos.recorridoPREORDEN(nodoRaiz, nivel);
                         break;
                     case 4:
-                        recorridos.recorridoENORDEN(nodoRaiz);
+                        recorridos.recorridoENORDEN(nodoRaiz, nivel);
                         break;
                     case 5:
-                        recorridos.recorridoPOSTORDEN(nodoRaiz);
+                        recorridos.recorridoPOSTORDEN(nodoRaiz, nivel);
                         break;
                     case 6:
                         System.exit(0); //Se termina la ejecución del programa.
