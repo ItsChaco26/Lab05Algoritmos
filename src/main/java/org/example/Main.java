@@ -1,4 +1,4 @@
-package cr.ac.ucr.ie.algoritmos;
+package org.example;
 
 import java.util.Scanner;
 

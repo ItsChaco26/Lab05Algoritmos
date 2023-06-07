@@ -1,4 +1,4 @@
-package cr.ac.ucr.ie.algoritmos.model;
+package org.example.model;
 
 public class Nodo {
     private int key;
