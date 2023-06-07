@@ -9,8 +9,6 @@ public class Nodo {
     private Nodo nodoDer;
 
     // Constructor de la clase Nodo
-
-
     public Nodo(int key, String nombre, String apellidos, String carrera) {
         this.key = key;
         this.nombre = nombre;
