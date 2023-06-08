@@ -14,7 +14,7 @@ public class Main {
 
         Scanner sn = new Scanner(System.in); //Se crear el Scanner para leer las entradas en consola
         int opcion = 0; //Se inicializa la variable opcion en 0, de esa forma entra en el While
-        while (opcion != 6) { //While que permitirá ejecutar el menú hasta que el usuario ingrese 11 la opción salir.
+        while (opcion != 7) { //While que permitirá ejecutar el menú hasta que el usuario ingrese 11 la opción salir.
             StringBuilder sb = new StringBuilder("Menu Principal"); //StringBuilder donde se almacena el contenido del Menú Principal
             sb.append("\nSeleccione una opción válida: \n")
                     .append("1): ").append("Inserción en Árbol ABB\n")
@@ -22,7 +22,8 @@ public class Main {
                     .append("3): ").append("Método de recorrido: PREORDEN\n")
                     .append("4): ").append("Método de recorrido: ENORDEN\n")
                     .append("5): ").append("Método de recorrido: POSTORDEN\n")
-                    .append("6): ").append("Salir");
+                    .append("6): ").append("Imprimir árbol\n")
+                    .append("7): ").append("Salir");
             System.out.println(sb);
             try {
                 opcion = sn.nextInt(); //Se asigna un dato tipo int a la variable opción para proceder a eveluarla en el switch y ejecutar un método o acciones especificas
@@ -53,6 +54,9 @@ public class Main {
                         recorridos.recorridoPOSTORDEN(utility.getRaiz(), nivel);
                         break;
                     case 6:
+                        utility.imprimirArbol();
+                        break;
+                    case 7:
                         System.exit(0); //Se termina la ejecución del programa.
                         break;
                     default:
