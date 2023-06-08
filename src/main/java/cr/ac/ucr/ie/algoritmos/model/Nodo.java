@@ -66,4 +66,13 @@ public class Nodo {
         this.nodoDer = nodoDer;
     }
 
+
+    @Override
+    public String toString() {
+        return "Key:" + key +
+                ", nombre: " + nombre +
+                ", apellidos:'" + apellidos +
+                ", carrera:'" + carrera;
+    }
 }
+

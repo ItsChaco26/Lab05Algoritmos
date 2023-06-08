@@ -2,53 +2,47 @@ package cr.ac.ucr.ie.algoritmos.service;
 
 import cr.ac.ucr.ie.algoritmos.model.Nodo;
 
+
+
 public class Recorridos {
-
-    public void recorridoPREORDEN(Nodo nodoRaiz, int nivel) {
-        if (nodoRaiz == null) {
-            System.out.println("El árbol no contiene elementos.");
-        } else {
-
-            for (int i = 0; i < nivel; i++) {
-                System.out.print("  ");
-            }
-
-            System.out.println(nodoRaiz.getKey());
-
-            recorridoPREORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
-            recorridoPREORDEN(nodoRaiz.getNodoDer(), nivel + 1);
-        }
+    public void recorridoENORDEN(Nodo raiz) {
+        recorridoINORDENRecursivo(raiz);
     }
 
-    public void recorridoENORDEN(Nodo nodoRaiz, int nivel) {
-        if (nodoRaiz == null) {
-            System.out.println("El árbol no contiene elementos.");
-        } else {
-            recorridoENORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
-
-
-            for (int i = 0; i < nivel; i++) {
-                System.out.print("  ");
-            }
-
-            System.out.println(nodoRaiz.getKey());
-
-            recorridoENORDEN(nodoRaiz.getNodoDer(), nivel + 1);
-    }}
-
-    public void recorridoPOSTORDEN(Nodo nodoRaiz, int nivel) {
-        if (nodoRaiz == null) {
-            System.out.println("El árbol no contiene elementos.");
-        } else {
-            recorridoPOSTORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
-            recorridoPOSTORDEN(nodoRaiz.getNodoDer(), nivel + 1);
-
-
-            for (int i = 0; i < nivel; i++) {
-                System.out.print("  ");
-            }
-
-            System.out.println(nodoRaiz.getKey());
+    private void recorridoINORDENRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return;
         }
+
+        recorridoINORDENRecursivo(nodo.getNodoIzq());
+        System.out.println(nodo.toString());
+        recorridoINORDENRecursivo(nodo.getNodoDer());
+    }
+
+    public void recorridoPREORDEN(Nodo raiz) {
+        recorridoPREORDENRecursivo(raiz);
+    }
+
+    private void recorridoPREORDENRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return;
+        }
+        System.out.println(nodo.toString());
+        recorridoPREORDENRecursivo(nodo.getNodoIzq());
+        recorridoPREORDENRecursivo(nodo.getNodoDer());
+    }
+
+    public void recorridoPOSTORDEN(Nodo raiz) {
+        recorridoPostOrdenRecursivo(raiz);
+    }
+
+    private void recorridoPostOrdenRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return;
+        }
+        recorridoPostOrdenRecursivo(nodo.getNodoIzq());
+        recorridoPostOrdenRecursivo(nodo.getNodoDer());
+        System.out.println(nodo.toString());
+
     }
 }
