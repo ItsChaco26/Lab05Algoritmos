@@ -45,13 +45,13 @@ public class Main {
                         utility.eliminarNodo(keyEliminar);
                         break;
                     case 3:
-                        recorridos.recorridoPREORDEN(utility.getRaiz(), nivel);
+                        recorridos.recorridoPREORDEN(utility.getRaiz());
                         break;
                     case 4:
-                        recorridos.recorridoENORDEN(utility.getRaiz(), nivel);
+                        recorridos.recorridoENORDEN(utility.getRaiz());
                         break;
                     case 5:
-                        recorridos.recorridoPOSTORDEN(utility.getRaiz(), nivel);
+                        recorridos.recorridoPOSTORDEN(utility.getRaiz());
                         break;
                     case 6:
                         utility.imprimirArbol();
