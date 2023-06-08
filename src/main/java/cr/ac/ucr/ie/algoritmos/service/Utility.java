@@ -77,14 +77,11 @@ public class Utility {
         if (nodo == null) {
             return;
         }
-
         imprimirArbolRecursivo(nodo.getNodoDer(), nivel + 1);
-
         for (int i = 0; i < nivel; i++) {
             System.out.print("    ");
         }
         System.out.println(nodo.getKey());
-
         imprimirArbolRecursivo(nodo.getNodoIzq(), nivel + 1);
     }
 

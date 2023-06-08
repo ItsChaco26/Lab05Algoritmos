@@ -28,13 +28,10 @@ import cr.ac.ucr.ie.algoritmos.model.Nodo;
                     }
                 } else {
                     recorridoENORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
-
                     for (int i = 0; i < nivel; i++) {
                         System.out.print("  ");
                     }
-
                     System.out.println(nodoRaiz.getKey());
-
                     recorridoENORDEN(nodoRaiz.getNodoDer(), nivel + 1);
                 }
             }
@@ -47,6 +44,10 @@ import cr.ac.ucr.ie.algoritmos.model.Nodo;
                 } else {
                     recorridoPOSTORDEN(nodoRaiz.getNodoIzq(), nivel + 1);
                     recorridoPOSTORDEN(nodoRaiz.getNodoDer(), nivel + 1);
+                    for (int i = 0; i < nivel; i++) {
+                        System.out.print("  ");
+                    }
+                    System.out.println(nodoRaiz.getKey());
                 }
             }
         }
