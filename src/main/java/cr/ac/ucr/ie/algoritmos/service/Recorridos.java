@@ -3,6 +3,7 @@ package cr.ac.ucr.ie.algoritmos.service;
 import cr.ac.ucr.ie.algoritmos.model.Nodo;
 
 
+
 public class Recorridos {
     public void recorridoENORDEN(Nodo raiz) {
         recorridoINORDENRecursivo(raiz);
@@ -42,5 +43,6 @@ public class Recorridos {
         recorridoPostOrdenRecursivo(nodo.getNodoIzq());
         recorridoPostOrdenRecursivo(nodo.getNodoDer());
         System.out.println(nodo.toString());
+
     }
 }

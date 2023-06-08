@@ -9,19 +9,23 @@ public class Utility {
         raiz = null;
     }
 
+
     public void insertarNodo(int key, String nombre, String apellidos, String carrera) {
         raiz = insertarNodoRecursivo(raiz, key, nombre, apellidos, carrera);
     }
 
     private Nodo insertarNodoRecursivo(Nodo nodo, int key, String nombre, String apellidos, String carrera) {
+
         if (nodo == null) {
             return new Nodo(key, nombre, apellidos, carrera);
         }
 
         if (key < nodo.getKey()) {
+
             nodo.setNodoIzq(insertarNodoRecursivo(nodo.getNodoIzq(), key, nombre, apellidos, carrera));
         } else if (key > nodo.getKey()) {
             nodo.setNodoDer(insertarNodoRecursivo(nodo.getNodoDer(), key, nombre, apellidos, carrera));
+
         }
 
         return nodo;
@@ -40,17 +44,20 @@ public class Utility {
         } else if (key > nodo.getKey()) {
             nodo.setNodoDer(eliminarNodoRecursivo(nodo.getNodoDer(), key));
         } else {
+
             //El nodo no tiene hijos
             if (nodo.getNodoIzq() == null && nodo.getNodoDer() == null) {
                 return null;
             }
             //El nodo tiene un solo hijo
+
             if (nodo.getNodoIzq() == null) {
                 return nodo.getNodoDer();
             }
             if (nodo.getNodoDer() == null) {
                 return nodo.getNodoIzq();
             }
+
             //El nodo tiene dos hijos
             Nodo hijo = buscarHijo(nodo.getNodoDer());
             nodo.setKey(hijo.getKey());
@@ -59,6 +66,7 @@ public class Utility {
             nodo.setCarrera(hijo.getCarrera());
             nodo.setNodoDer(eliminarNodoRecursivo(nodo.getNodoDer(), hijo.getKey()));
         }
+
         return nodo;
     }
 
@@ -68,6 +76,7 @@ public class Utility {
         }
         return buscarHijo(nodo.getNodoIzq());
     }
+
 
     public void imprimirArbol() {
         imprimirArbolRecursivo(raiz, 0);
@@ -87,5 +96,6 @@ public class Utility {
 
     public Nodo getRaiz() {
         return raiz;
+
     }
 }

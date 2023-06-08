@@ -7,6 +7,11 @@ import cr.ac.ucr.ie.algoritmos.service.Utility;
 import java.util.Scanner;
 
 public class Main {
+    static Utility utility = new Utility();
+    static Nodo nodoRaiz = utility.getRaiz();
+
+    static int nivel = 1;
+  static Recorridos recorridos = new Recorridos();
     public static void main(String[] args) {
         Utility utility = new Utility();
         int nivel = 1;
